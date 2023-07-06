@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+class jornadaViewSet(viewsets.ModelViewSet):
+    queryset = jornada.objects.all()
+    serializer_class = jornadaSerializer
