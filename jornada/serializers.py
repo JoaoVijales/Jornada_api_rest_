@@ -6,4 +6,3 @@ class DepoimentosSerializer(serializers.ModelSerializer):
         model = Depoimentos
         fields = '__all__'
 
-    
