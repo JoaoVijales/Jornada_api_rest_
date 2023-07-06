@@ -12,8 +12,8 @@ class DepoimentosViewSet(viewsets.ModelViewSet):
 
 class DepoimentosHomeViewSet(viewsets.ModelViewSet):
     # exibindo um depoimento aleatorio #
-    total_objects = Depoimentos.objects.count() -1
-    id = randint(0, total_objects)
-    
-    queryset = Depoimentos.objects.filter(id=id)
-    serializer_class = DepoimentosSerializer
+    if Depoimentos.objects.count() > 0:
+        total_objects = Depoimentos.objects.count() -1
+        id = randint(0, total_objects)
+        queryset = Depoimentos.objects.filter(id=id)
+        serializer_class = DepoimentosSerializer
