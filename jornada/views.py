@@ -13,11 +13,13 @@ class DepoimentosViewSet(viewsets.ModelViewSet):
 
 class DepoimentosHomeViewSet(viewsets.ModelViewSet):
     # exibindo um depoimento aleatorio #
+    
     def get_id():
         queryset = Depoimentos.objects.all()
         id_list = queryset.values_list('id', flat=True)
-        id = choice(id_list)
-        return id
+        if id_list.count() > 0:
+            id = choice(id_list)
+            return id
     
     queryset = Depoimentos.objects.filter(id=get_id())
     serializer_class = DepoimentosSerializer
