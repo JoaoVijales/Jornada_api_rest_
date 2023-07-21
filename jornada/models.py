@@ -7,5 +7,5 @@ class Depoimentos(models.Model):
 
 class Destinos(models.Model):
     nome = models.CharField(max_length=50, blank=False, null=False)
-    foto = models.ImageField(upload_to='fotos', blank=False)
+    foto = models.ImageField(upload_to='fotos', blank=True)
     preco = models.CharField(max_length=50, blank=False, null=False)
