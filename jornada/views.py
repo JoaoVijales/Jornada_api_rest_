@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from jornada.models import Depoimentos, Destinos
-from jornada.serializers import ReviewsSerializer, DestinosSerializer
+from jornada.models import Depoimentos, Trips
+from jornada.serializers import ReviewsSerializer, TripsSerializer
 from random import choice
 
 
@@ -26,5 +26,5 @@ class DepoimentosHomeViewSet(viewsets.ModelViewSet):
     
 class DestinosViewSet(viewsets.ModelViewSet):
     # exibindo destinos #
-    queryset = Destinos.objects.all()
-    serializer_class = DestinosSerializer
+    queryset = Trips.objects.all()
+    serializer_class = TripsSerializer
