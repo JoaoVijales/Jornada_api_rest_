@@ -1,30 +1,30 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from jornada.models import Depoimentos, Destinos
-from jornada.serializers import DepoimentosSerializer, DestinosSerializer
+from jornada.models import Reviews, Trips
+from jornada.serializers import ReviewsSerializer, TripsSerializer
 from random import choice
 
 
 
-class DepoimentosViewSet(viewsets.ModelViewSet):
-    # exibindo depoimentos #
-    queryset = Depoimentos.objects.all()
-    serializer_class = DepoimentosSerializer
+class ReviewsViewSet(viewsets.ModelViewSet):
+    # Displaying Reviews #
+    queryset = Reviews.objects.all()
+    serializer_class = ReviewsSerializer
 
-class DepoimentosHomeViewSet(viewsets.ModelViewSet):
-    # exibindo um depoimento aleatorio #
+class ReviewsHomeViewSet(viewsets.ModelViewSet):
+    # Displaying a random review #
     
     def get_id():
-        queryset = Depoimentos.objects.all()
+        queryset = Reviews.objects.all()
         id_list = queryset.values_list('id', flat=True)
         if id_list.count() > 0:
             id = choice(id_list)
             return id
     
-    queryset = Depoimentos.objects.filter(id=get_id())
-    serializer_class = DepoimentosSerializer
+    queryset = Reviews.objects.filter(id=get_id())
+    serializer_class = ReviewsSerializer
     
-class DestinosViewSet(viewsets.ModelViewSet):
-    # exibindo destinos #
-    queryset = Destinos.objects.all()
-    serializer_class = DestinosSerializer
+class TripsViewSet(viewsets.ModelViewSet):
+    # Displaying trips #
+    queryset = Trips.objects.all()
+    serializer_class = TripsSerializer
