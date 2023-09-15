@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from jornada.models import Depoimentos, Destinos
+from jornada.models import Reviews, Destinos
 
-class DepoimentosSerializer(serializers.ModelSerializer):
+class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Depoimentos
+        model = Reviews
         fields = '__all__'
 
 class DestinosSerializer(serializers.ModelSerializer):
