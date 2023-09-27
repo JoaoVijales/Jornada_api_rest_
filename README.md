@@ -1,6 +1,6 @@
 # Jornada_api_rest_
 
- uma api modelo rest para um site de viagens desenvolvida em um desafio
+ uma api modelo rest para um site de viagens
 
 # Requisitos:
 
